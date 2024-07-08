@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-mapfile -t node_char < <(kubectl get no -l node-role.kubernetes.io/worker -o json | jq -r '
+mapfile -t node_char < <(kubectl get no -l kubevirt.io/schedulable=true -o json | jq -r '
   .items[] | 
   .metadata.name as $name |
   .metadata.labels | 
