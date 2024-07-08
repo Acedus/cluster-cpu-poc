@@ -6,7 +6,7 @@ mapfile -t node_char < <(kubectl get no -l kubevirt.io/schedulable=true -o json 
   .items[] | 
   .metadata.name as $name |
   .metadata.labels | 
-  with_entries(select(.key | startswith("host-model-required-features.node.kubevirt.io") or startswith("host-model-cpu.node.kubevirt.io"))) |
+  with_entries(select(.key | startswith("host-model-required-features.node.kubevirt.io") or startswith("cpu-model-migration.node.kubevirt.io"))) |
   to_entries | 
   map("\(.key)=\(.value)") | 
   sort | 
