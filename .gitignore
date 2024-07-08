@@ -1,0 +1,16 @@
+.idea
+.vagrant
+.GeneratedDockerfile
+.gradle
+*.swp
+*.pem
+*.crt
+*.csr
+/bazel-*
+/ci.bazelrc
+_ci-configs/
+.history
+*~
+.bazeldnf/
+.vscode/
+.envrc
